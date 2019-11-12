@@ -1,0 +1,60 @@
+﻿@model IEnumerable<DotNetAppSqlDb.Models.Passeio>
+@{
+    ViewBag.Title = "Passeios";
+    Layout = "~/Views/Shared/EscolaView.cshtml";
+    DotNetAppSqlDb.Models.Escola vEscola = (DotNetAppSqlDb.Models.Escola)HttpContext.Current.Session["EscolaLogada"];
+}
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Escola</title>
+</head>
+<body>
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">Passeios</h1>
+        <p class="lead">Aqui você tem acesso aos Passeios disponíveis para agendamento.</p>
+    </div>
+
+    <form name="meu_form">
+
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <th scope="col">@Html.DisplayNameFor(model => model.IdPasseio)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Nome)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Data)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.QuantAlunos)</th>
+                    <th scopa="col">@Html.DisplayNameFor(model => model.Valor)</th>
+                    <th scope="col">@Html.DisplayName("Detalhes")</th>
+                </tr>
+            </thead>
+
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.IdPasseio)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Nome)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Data)</td>
+                    <td>@Html.DisplayFor(modelItem => item.QuantAlunos)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Valor)</td>
+                    <td>
+                        @Html.ActionLink("Confirmar", "ConfirmaPasseio", "Escolas", new { idPasseio = item.IdPasseio, idEscola = vEscola.IdEscola }, new { @class = "btn btn-success" })
+                    </td>
+                </tr>
+            }
+        </table>
+
+        <div class="btn-group">
+            <div class="container">
+                @Html.ActionLink("Cancelar", "MainPage", vEscola, new { @class = "btn btn-warning btn-xs" })
+            </div>
+        </div>
+
+    </form>
+
+</body>
+
+</html>
+

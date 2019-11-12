@@ -1,0 +1,43 @@
+﻿@model DotNetAppSqlDb.Models.Empresa
+
+@{
+    ViewBag.Title = "Details";
+    DotNetAppSqlDb.Models.Empresa vEmpresa = (DotNetAppSqlDb.Models.Empresa)HttpContext.Current.Session["EmpresaLogada"];
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Empresa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeEmpresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeEmpresa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit",vEmpresa.IdEmpresa) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

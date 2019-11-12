@@ -1,0 +1,24 @@
+﻿@model DotNetAppSqlDb.Models.ResultadoModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/VocacionalView.cshtml";
+}
+
+<html>
+<head>
+    <link href="@Url.Content("~/Content/css/vocacional-checkbox.css")" rel="stylesheet">
+    <link href="@Url.Content("~/Content/vendor/bootstrap/scss/mixins/_buttons-mz.scss")" rel="stylesheet">
+</head>
+<body>
+    <!-- Default unchecked -->
+    <div class="texto-gerarResultado">
+        <p><h4>Para saber quais cursos se encaixam com seu perfil!</h4></p>
+        <br>
+        <p><h4>Clique no botão logo abaixo</h4></p>
+    </div>
+    <div class="container-button">
+        @Html.ActionLink("Gerar Resultado", "ExibirCurso", "Resultado", new { id = Model.IdResposta }, new { @class = "myButton" })
+    </div>
+</body>
+</html>
+

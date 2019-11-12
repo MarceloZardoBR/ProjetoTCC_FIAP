@@ -1,0 +1,68 @@
+﻿@model IEnumerable<DotNetAppSqlDb.Models.Passeio>
+@{
+    ViewBag.Title = "Passeios";
+    Layout = "~/Views/Shared/EmpresaView.cshtml";
+    //DotNetAppSqlDb.Models.Empresa vEmpresa = (DotNetAppSqlDb.Models.Empresa)HttpContext.Current.Session["EmpresaLogada"];
+    DotNetAppSqlDb.Models.Empresa empresaModel = (DotNetAppSqlDb.Models.Empresa)ViewData["EmpresaModel"];
+
+}
+
+<h2>Meus Passeios</h2>
+
+<html>
+<head>
+
+</head>
+<body>
+    <div class="col-lg-12">
+        <div class="well">
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayName("Nome da Empresa")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Data do Passeio")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Valor do Passeio")
+                    </th>
+                    @*<th>
+                            @Html.DisplayName("Sua Autorização")
+                        </th>*@
+                </tr>
+
+
+                @foreach (var item in Model)
+                {
+                    @Html.HiddenFor(model => item.IdPasseio)
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(model => item.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.Data)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.Valor)
+                        </td>
+                        @*<td>
+                                @Html.DisplayFor(model => item.Autorizacao.URL)
+                            </td>*@
+                        @*<td>
+                                @Html.ActionLink("Detalhes", "VerificaAutorizacao", "Resultado", new { idPasseio = item.IdPasseio, idAluno = resultado.IdAluno }, new { @class = "btn btn-success" })
+                            </td>*@
+
+                    </tr>
+                }
+
+            </table>
+            <div class="col-md-3">
+                @Html.ActionLink("Voltar", "MainPage", "Empresas", empresaModel, new { @class = "btn btn-primary" })
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

@@ -1,0 +1,53 @@
+﻿@model DotNetAppSqlDb.Models.Escola
+
+@{
+    ViewBag.Title = "MainPage";
+    Layout = "~/Views/Shared/EscolaView.cshtml";
+    DotNetAppSqlDb.Models.Escola vEscola = (DotNetAppSqlDb.Models.Escola)HttpContext.Current.Session["EscolaLogada"];
+
+}
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Empresa</title>
+</head>
+<body>
+
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p class="lead">Esta é sua Home Page, aqui você tem acesso aos seus Passeios já cadastrados e disponíveis, aos Gráficos de desempenho dos alunos, e também um breve tutorial de utilização de nossa plataforma.</p>
+    </div>
+
+    <div class="container marketing">
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+            <div class="col-lg-4">
+                <img class="img-thumbnail" src="~/Content/informacao.png" alt="Generic placeholder image" width="128" height="128">
+                <h2>Como funciona?</h2>
+                <p>Veja um breve tutorial da nossa plataforma.</p>
+               
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img class="img-thumbnail" src="~/Content/passeio.png" alt="Generic placeholder image" width="128" height="128">
+                <h2>Passeios</h2>
+                <p>Confira quais os passeios já disponíveis! </p>
+                
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img class="img-thumbnail" src="~/Content/grafico.png" alt="Generic placeholder image" width="128" height="128">
+                <h2>Gráficos</h2>
+                <p>Ánalise do desempenho dos alunos.</p>
+               
+            </div><!-- /.col-lg-4 -->
+
+        </div><!-- /.row -->
+    </div>
+
+</body>
+
+
+</html>
+
+

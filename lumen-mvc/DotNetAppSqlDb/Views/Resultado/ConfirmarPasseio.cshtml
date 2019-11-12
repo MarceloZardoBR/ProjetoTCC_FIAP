@@ -1,0 +1,88 @@
+﻿@model DotNetAppSqlDb.Models.PasseioAluno
+@using DotNetAppSqlDb.Models
+@{
+    ViewBag.Title = "ConfirmarPasseio";
+    Layout = "~/Views/Shared/AlunoView.cshtml";
+    Autorizacao autorizacaoModel = (Autorizacao)ViewData["AutorizacaoModel"];
+    Passeio passeioModel = (Passeio)ViewData["PasseioModel"];
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Confirmar Passeio</title>
+    <script src="@Url.Content("~/Content/vendor/bootstrap/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Content/vendor/jquery/jquery.min.js")"></script>
+    <link href="@Url.Content("~/Content/vendor/bootstrap/css/bootstrap.min.css")">
+</head>
+<body>
+    <!-- Page Content -->
+    <div class="container">
+        <!-- Call to Action Well -->
+        <div class="row">
+            @using (Html.BeginForm())
+            {
+                <div class="col-lg-12">
+                    <div class="well">
+
+                        <div class="form-group">
+                            <h5>@Html.Label("Empresa")</h5>
+                            <h6 class = "control-label">@passeioModel.Nome</h6>
+                        </div>
+                        <div class="form-group">
+                            <h5>@Html.Label("Quantidade Disponível de Alunos")</h5>
+                            <h6 class = "control-label">@passeioModel.QuantAlunos</h6>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <h5>@Html.Label("Data do passeio")</h5>
+                            <h6 class = "control-label">@passeioModel.Data</h6>
+                        </div>
+                            
+                        <hr>
+
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#abrirModalPasseio">
+                            Confirmar Passeio
+                        </button>
+
+                        <div class="modal fade" id="abrirModalPasseio" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Autorização para Passeio</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <!--Aqui é o Body, onde coloca os valores-->
+                                            <label style="text-align:center">Você deseja confirmar o passeio para a @passeioModel.Nome</label>
+                                            <label style="text-align:center">No dia @passeioModel.Data</label>
+                                        </div>
+                                        @Html.HiddenFor(model => model.IdPasseio, new { @Value = passeioModel.IdPasseio})
+                                        @Html.HiddenFor(model => model.IdAutorizacao, new { @Value = autorizacaoModel.IdAutorizacao})
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-primary">Confirmar</button>
+                                        @*@Html.ActionLink("Confirmar", "EscolherPasseio", "Resultado", new { idPasseio = Model.IdPasseio, idAluno = alunoModel.IdAluno}, new { @class = "btn btn-primary" })*@
+                                    </div> 
+                                           
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Fim da div modal-->
+                    </div>
+                </div>
+            }
+            <!-- /.col-lg-12 -->
+        </div>
+    </div>
+</body>
+</html>
+  
+
+

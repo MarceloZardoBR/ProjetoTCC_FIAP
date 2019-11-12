@@ -1,0 +1,70 @@
+﻿
+@model IEnumerable<DotNetAppSqlDb.Models.Passeio>
+@using DotNetAppSqlDb.Models
+
+@{
+    /**/
+    ViewBag.Title = "MeusPasseios";
+    Layout = "~/Views/Shared/EscolaView.cshtml";
+    DotNetAppSqlDb.Models.Escola vEscola = (DotNetAppSqlDb.Models.Escola)HttpContext.Current.Session["EscolaLogada"];
+    DotNetAppSqlDb.Models.Escola escolaModel = (DotNetAppSqlDb.Models.Escola)ViewData["EscolaModel"];
+}
+
+<h2 class="col-lg-12">Meus Passeios Realizados</h2>
+
+<html>
+<head>
+
+</head>
+<body>
+    <div class="col-lg-12">
+        <div class="well">
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayName("Nome da Empresa")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Data do Passeio")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Valor do Passeio")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Status")
+                    </th>
+                    @*<th>
+            @Html.DisplayName("Sua Autorização")
+        </th>*@
+                </tr>
+
+
+                @foreach (var item in Model)
+                {
+                    @Html.HiddenFor(model => item.IdPasseio)
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(model => item.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.Data)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.Valor)
+                        </td>
+                        <td><button type="button" class="btn btn-secondary btn-sm" disabled>Passeio Realizado</button></td>
+
+                    </tr>
+                }
+
+            </table>
+            <div class="col-md-3">
+                @Html.ActionLink("Voltar", "MainPage", "Escolas", escolaModel, new { @class = "btn btn-primary" })
+            </div>
+            <div>
+                <h5 style="text-align: center">@TempData["Mensagem"]</h5>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

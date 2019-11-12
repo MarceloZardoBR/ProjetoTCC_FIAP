@@ -1,0 +1,98 @@
+﻿@model DotNetAppSqlDb.Models.Passeio
+@using DotNetAppSqlDb.Models
+@{
+    ViewBag.Title = "ConfirmaPasseio";
+    Layout = "~/Views/Shared/EscolaView.cshtml";
+    DotNetAppSqlDb.Models.Escola vEscola = (DotNetAppSqlDb.Models.Escola)HttpContext.Current.Session["EscolaLogada"];
+    Passeio passeioModel = (Passeio)ViewData["PasseioModel"];
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Confirmar Passeio</title>
+    <script src="@Url.Content("~/Content/vendor/bootstrap/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Content/vendor/jquery/jquery.min.js")"></script>
+    <link href="@Url.Content("~/Content/vendor/bootstrap/css/bootstrap.min.css")">
+</head>
+<body>
+    <!-- Page Content -->
+    <h5 style="text-align: center">@TempData["Mensagem"]</h5>
+    <div class="container">
+        <!-- Call to Action Well -->
+        <div class="row">
+            @using (Html.BeginForm("ConfirmaPasseio","Escolas",FormMethod.Post))
+            {
+                <div class="col-lg-12">
+                    <div class="well">
+
+                        <div class="form-group">
+                            <h7>@Html.Label("Empresa")</h7>
+                            <h6 class="control-label">@passeioModel.Nome</h6>
+                        </div>
+                        <div class="form-group">
+                            <h7>@Html.Label("Quantidade Disponível de Alunos")</h7>
+                            <h6 class="control-label">@passeioModel.QuantAlunos</h6>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <h7>@Html.Label("Data do passeio")</h7>
+                            <h6 class="control-label">@passeioModel.Data</h6>
+                        </div>
+                        <div class="form-group">
+                            <h7>@Html.Label("Valor R$")</h7>
+                            <h6 class="control-label">@passeioModel.Valor</h6>
+                        </div>
+
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#abrirModal">
+                            Confirmar Passeio
+                        </button>
+
+                        <div class="modal fade" id="abrirModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Autorização para Passeio</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <!--Aqui é o Body, onde coloca os valores-->
+                                            <label style="text-align:center">Você deseja confirmar o pagamento do passeio para a @passeioModel.Nome</label>
+                                            <label style="text-align:center">No dia @passeioModel.Data</label>
+                                            <label style="text-align:center">No valor de @passeioModel.Valor</label>
+                                        </div>
+                                        @Html.HiddenFor(model => model.IdPasseio, new { @Value = passeioModel.IdPasseio })
+                                        @Html.HiddenFor(model => model.IdEscola, new { @Value = vEscola.IdEscola })
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        @*@Html.ActionLink("Confirmar", "Pagamento", "Escolas", new { idPasseio = passeioModel.IdPasseio, idEscola = vEscola.IdEscola }, new { @class = "btn btn-success" })*@
+                                        <button type="submit" class="btn btn-primary">Confirmar e Efetuar Pagamento</button>
+                                        @*@Html.ActionLink("Confirmar", "Pagamento", new { idPasseio = passeioModel.IdPasseio, idEscola = vEscola.IdEscola }, new { @class = "btn btn-success" })*@
+                                        @*@Html.ActionLink("Confirmar", "EscolherPasseio", "Resultado", new { idPasseio = Model.IdPasseio, idAluno = alunoModel.IdAluno}, new { @class = "btn btn-primary" })*@
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-10">
+                            <!-- Depois Ajustar no CSS-->
+
+                        </div>
+                        <!--Fim da div modal-->
+                    </div>
+                </div>
+            }
+            <!-- /.col-lg-12 -->
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+

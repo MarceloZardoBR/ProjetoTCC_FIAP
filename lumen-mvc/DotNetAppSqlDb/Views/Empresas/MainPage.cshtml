@@ -1,0 +1,46 @@
+﻿@model DotNetAppSqlDb.Models.Empresa
+@{
+    ViewBag.Title = "MainPage";
+    Layout = "~/Views/Shared/EmpresaView.cshtml";
+    DotNetAppSqlDb.Models.Empresa vEmpresa = (DotNetAppSqlDb.Models.Empresa)HttpContext.Current.Session["EmpresaLogada"];
+
+}
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Empresa</title>
+</head>
+<body>
+
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">Seja Bem Vinda @vEmpresa.NomeEmpresa</h1>
+    </div>
+
+    <div class="container marketing">
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+            <div class="col-lg-4">
+                <img class="img-thumbnail" src="~/Content/informacao.png" alt="Generic placeholder image" width="128" height="128">
+                <h2>Como funciona?</h2>
+                <p>Você vai ajudar a engajar muitos alunos com dificuldades em encontrar sua profissão ideal! Nós organizamos passeios e excursões para alunos conhecerem sua empresa, aprenderem como funcionam as profissões e viverem um dia a dia em uma grande empresa!</p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img class="img-thumbnail" src="~/Content/calendario.png" alt="Generic placeholder image" width="128" height="128">
+                <h2>Passeios</h2>
+                <p>Escolha sua melhor data para receber os alunos!</p>
+                
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img class="img-thumbnail" src="~/Content/grafico.png" alt="Generic placeholder image" width="128" height="128">
+                <h2>Gráficos</h2>
+                <p>Consulte gráficos que ajudam a entender a situação dos alunos e faculdades no Brasil.</p>
+                
+            </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+    </div>
+</body>
+
+
+</html>

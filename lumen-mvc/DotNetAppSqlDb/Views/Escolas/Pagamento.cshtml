@@ -1,0 +1,82 @@
+﻿@using DotNetAppSqlDb.Models
+@model DotNetAppSqlDb.Models.Pagamento
+@{
+    ViewBag.Title = "Pagamento";
+    Layout = "~/Views/Shared/EscolaView.cshtml";
+    DotNetAppSqlDb.Models.Escola vEscola = (DotNetAppSqlDb.Models.Escola)HttpContext.Current.Session["EscolaLogada"];
+    Passeio passeioModel = (Passeio)ViewData["PasseioModel"];
+}
+
+<h2>Pagamento</h2>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Confirmar Passeio</title>
+    <script src="@Url.Content("~/Content/vendor/bootstrap/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Content/vendor/jquery/jquery.min.js")"></script>
+    <link href="@Url.Content("~/Content/vendor/bootstrap/css/bootstrap.min.css")">
+</head>
+<body>
+    <!-- Page Content -->
+        <!-- Call to Action Well -->
+        <div class="row">
+ 
+                <div class="col-lg-12">
+                    <div class="well">
+                        @using (Html.BeginForm("Pagamento", "Escolas", FormMethod.Post))
+                        {
+
+                        <div class="form-horizontal">
+                            <hr />
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.HiddenFor(model => model.IdPagamento)
+                            @Html.HiddenFor(model => model.IdEscola)
+
+
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Titular, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Titular, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Titular, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.NumeroCartao, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.NumeroCartao, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.NumeroCartao, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Validade, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Validade, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Validade, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Codigo, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Codigo, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Codigo, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="Confirmar" class="btn btn-primary" />
+                                    @Html.ActionLink("Voltar", "MainPage", "Empresas", new { id = vEscola.IdEscola }, new { @class = "btn btn-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                        }
+                    </div>
+                    </div>
+            </div>
+        </body>
+        </html>
+

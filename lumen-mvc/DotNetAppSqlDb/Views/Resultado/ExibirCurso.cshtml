@@ -1,0 +1,70 @@
+﻿@model IEnumerable<DotNetAppSqlDb.Models.CursoModel>
+@{
+    ViewBag.Title = "ExibirCurso";
+    Layout = "~/Views/Shared/VocacionalView.cshtml";
+    IEnumerable<DotNetAppSqlDb.Models.Passeio> listaPasseio = (IEnumerable<DotNetAppSqlDb.Models.Passeio>)ViewData["ListaPasseios"];
+    DotNetAppSqlDb.Models.ResultadoModel resultado = (DotNetAppSqlDb.Models.ResultadoModel) ViewData["ResultadoModel"];
+}
+
+<html>
+<head>
+    <link href="@Url.Content("~/Content/css/vocacional-checkbox.css")" rel="stylesheet">
+</head>
+<body>
+    <div class="container-resu-cursos">
+        <!-- Default unchecked -->
+
+        <div class="texto-resultado">
+            @foreach (var item in Model)
+            {
+                <span class="padrao-texto">
+                    @Html.DisplayFor(model => item.NomeCurso)
+                    <br />
+                </span>
+            }
+        </div>
+    </div>
+
+    <div class="col m-3">
+        <table class="table" >
+            <tr>
+                <th>
+                    @Html.DisplayName("Nome da Empresa")
+                </th>
+                <th>
+                    @Html.DisplayName("Data do Passeio")
+                </th>
+                <th>
+                    @Html.DisplayName("Vagas Disponíveis")
+                </th>
+                <th>
+                    @Html.DisplayName("Detalhes do Passeio")
+                </th>
+            </tr>
+
+           
+                @foreach(var item in listaPasseio)
+                {
+
+             <tr>
+                <td>
+                    @Html.DisplayFor(m => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.Data)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.QuantAlunos)
+                </td>
+                <td>
+                    @Html.ActionLink("Detalhes","VerificaAutorizacao","Resultado", new { idPasseio = item.IdPasseio, idAluno = resultado.IdAluno}, new { @class = "btn btn-success" })
+                </td>
+            
+            </tr>
+                }
+            
+        </table>
+    </div>
+</body>
+</html>
+

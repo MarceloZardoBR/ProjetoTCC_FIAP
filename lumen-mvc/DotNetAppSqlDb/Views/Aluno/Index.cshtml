@@ -1,0 +1,39 @@
+﻿@model DotNetAppSqlDb.Models.Aluno
+
+@{
+    ViewBag.Title = "Registra";
+    Layout = "~/Views/Shared/VocacionalTesteView.cshtml";
+}
+
+<link href="@Url.Content("~/Content/css/login-aluno.css")" rel="stylesheet" id="bootstrap-css">
+<script src="@Url.Content("~/Content/vendor/bootstrap/js/bootstrap.min.js")"></script>
+<script src="@Url.Content("~/Content/vendor/jquery/jquery.min.js")"></script>
+<!------ Include the above in your HEAD tag ---------->
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <img src="@Url.Content("~/Content/students.png")" id="icon" alt="User Icon" />
+        </div>
+            
+                <h5 style="text-align: center">@TempData["Mensagem"]</h5>
+        <!-- Login Form -->
+        @using (Html.BeginForm("Login", "Aluno", FormMethod.Post))
+        {
+        <div>
+            @Html.TextBoxFor(model => model.Email, new { placeholder = "Email", htmlAtributtes = new { @class = "fadeIn second" } })
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+        <div>
+            @Html.PasswordFor(model => model.Senha, new { @class = "fadeIn third", placeholder = "Senha" })
+            @Html.ValidationMessageFor(model => model.Senha)
+        </div>
+            <input type="submit" class="fadeIn fourth" value="Log In">
+        }
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+            <a class="underlineHover" href="#">Forgot Password?</a>
+        </div>
+    </div>
+</div>

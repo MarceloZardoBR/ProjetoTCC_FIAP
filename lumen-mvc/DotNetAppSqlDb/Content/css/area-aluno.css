@@ -1,0 +1,13 @@
+﻿body {
+}
+
+.estilo-texto1{
+    flex: auto;
+    text-align: center;
+
+}
+.estilo-texto2{
+    flex: auto;
+    text-align: center;
+    font-size: 22px;
+}

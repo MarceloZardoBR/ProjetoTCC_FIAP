@@ -1,0 +1,57 @@
+﻿@model IEnumerable<DotNetAppSqlDb.Models.Aluno>
+@{
+    ViewBag.Title = "Graficos";
+    Layout = "~/Views/Shared/EmpresaView.cshtml";
+}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script>
+window.onload = function () {
+
+var barGraph = new CanvasJS.Chart("barGraph", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "dark1", "dark2"
+	exportEnabled: true,
+	title: {
+		text: "Pontuação geral das categorias do teste vocacional"
+	},
+	data: [{
+		type: "column",
+		dataPoints:  @Html.Raw(ViewBag.BarEmpresa)
+	}]
+    });
+
+    var genderChart = new CanvasJS.Chart("genderChart", {
+        animationEnabled: true,
+        title: {
+            text: "Porcentagem de alunos por genero"
+        },
+        data: [{
+            type: "doughnut",
+            startAngle: 60,
+            indexLabelFontSize: 16,
+            indexLabel: "{label} - {y}%",
+            toolTipContent: "<b>{label}:</b> {y}%",
+            dataPoints: @Html.Raw(ViewBag.GeneroEmpresa)
+            }]
+            });
+    
+    genderChart.render();
+    barGraph.render();
+
+}
+    </script>
+</head>
+<body>
+    <div id="barGraph" style="height: 300px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+    <div id="genderChart" style="height: 300px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+</body>
+</html>
+
+

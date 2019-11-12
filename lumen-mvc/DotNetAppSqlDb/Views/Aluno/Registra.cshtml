@@ -1,0 +1,58 @@
+﻿@model DotNetAppSqlDb.Models.Aluno
+@{
+    ViewBag.Title = "Registra";
+    Layout = "~/Views/Shared/VocacionalTesteView.cshtml";
+}
+
+<link href="@Url.Content("~/Content/css/login-aluno.css")" rel="stylesheet" id="bootstrap-css">
+<script src="@Url.Content("~/Content/vendor/bootstrap/js/bootstrap.min.js")"></script>
+<script src="@Url.Content("~/Content/vendor/jquery/jquery.min.js")"></script>
+<!------ Include the above in your HEAD tag ---------->
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <img src="@Url.Content("~/Content/students.png")" id="icon" alt="User Icon" />
+        </div>
+
+        <h5 style="text-align: center">@TempData["Mensagem"]</h5>
+        <!-- Login Form -->
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @using (Html.BeginForm("Registrar", "Aluno", FormMethod.Post))
+        {
+            <div>
+                @Html.TextBoxFor(model => model.NomeCompleto, htmlAttributes: new { placeholder = "Nome Completo", htmlAtributtes = new { @class = "fadeIn second" } })
+                @Html.ValidationMessageFor(model => model.NomeCompleto, "", new { @class = "text-danger" })
+            </div>
+            <div>
+                @Html.TextBoxFor(model => model.Email, htmlAttributes: new { placeholder = "Email", htmlAtributtes = new { @class = "fadeIn second" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+            <div>
+                @Html.PasswordFor(model => model.Senha, new { placeholder = "Senha", htmlAtributtes = new { @class = "fadeIn second" } })
+                @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+            </div>
+            <div>
+                @Html.TextBoxFor(model => model.Telefone, htmlAttributes: new { placeholder = "Telefone", htmlAtributtes = new { @class = "fadeIn second" } })
+                @Html.ValidationMessageFor(model => model.Telefone, "", new { @class = "text-danger" })
+            </div>
+            <br/>
+            <div class="form-check">
+                <div class="form-check form-check-inline">
+                    @foreach (var genero in Model.Generos)
+                    {
+                        <p class="form-check">
+                        @Html.RadioButtonFor(model => model.Genero, genero@*, new { @class = "" }*@)@genero
+                        </p>
+                    }
+                </div>
+            </div>
+            <div>
+                <input type="submit" class="fadeIn fourth" value="Cadastrar">
+            </div>
+
+            }
+
+    </div>
+</div>

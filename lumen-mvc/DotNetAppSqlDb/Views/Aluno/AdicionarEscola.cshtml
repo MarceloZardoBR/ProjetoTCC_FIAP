@@ -1,0 +1,34 @@
+﻿
+@model DotNetAppSqlDb.Models.Aluno
+@{
+    ViewBag.Title = "AdicionarEscola";
+    Layout = "~/Views/Shared/AlunoView.cshtml";
+    DotNetAppSqlDb.Models.Aluno vAluno = (DotNetAppSqlDb.Models.Aluno)HttpContext.Current.Session["AlunoLogado"];
+}
+
+<div class="container align-content-center">
+    @using (Html.BeginForm())
+    {
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.HiddenFor(m => m.IdAluno)
+        <div class="form-group">
+            @Html.Label("Codigo", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.Password("codigo", "", new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Cadastrar" class="btn btn-primary" />
+            </div>
+        </div>
+        <div>
+            <!-- Depois Ajustar no CSS-->
+            @TempData["Mensagem"]
+        </div>
+    </div>
+    }
+</div>
+

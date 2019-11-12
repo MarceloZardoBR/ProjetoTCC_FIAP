@@ -1,0 +1,75 @@
+﻿@model IEnumerable<DotNetAppSqlDb.Models.Passeio>
+@{
+    ViewBag.Title = "Passeios";
+    Layout = "~/Views/Shared/EmpresaView.cshtml";
+    DotNetAppSqlDb.Models.Empresa vEmpresa = (DotNetAppSqlDb.Models.Empresa)HttpContext.Current.Session["EmpresaLogada"];
+}
+
+
+<div class="container p-3">
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">Meus Passeios</h1>
+        <p class="lead">Aqui você tem acesso aos seus passeios agendados.</p>
+    </div>
+
+    <form name="meu_form">
+
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <th scope="col">@Html.DisplayName("Código do Passeio")</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Nome)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Data)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.QuantAlunos)</th>
+                    <th scope="col">Categoria Passeio</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Confirmado)</th>
+                    <th>
+                    <th>
+
+                </tr>
+            </thead>
+
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.IdPasseio)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Nome)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Data)</td>
+                    <td>@Html.DisplayFor(modelItem => item.QuantAlunos)</td>
+                    <td>@Html.DisplayFor(modelItem => item.CategoriaPasseio.NomeCategoria)</td>
+                    @if (item.Confirmado == true)
+                    {
+                        <td>Sim</td>
+                        
+                    }
+                    else
+                    {
+                        <td>Não</td>
+                    }
+                    @if (item.Confirmado == true)
+                    {
+                        <td></td>
+                    }
+                    else
+                    {
+                        <td>@Html.ActionLink("Editar", "EditarPasseio", new { id = item.IdPasseio }, new { @class = "btn btn-danger btn-sm" } )</td>
+                    }
+
+                </tr>
+
+
+            }
+        </table>
+
+        <div class="btn-group">
+            <div class="container">
+                @Html.ActionLink("Voltar", "MainPage", vEmpresa, new { @class = "btn btn-warning btn-xs" })
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+

@@ -1,0 +1,23 @@
+﻿@model DotNetAppSqlDb.Models.Passeio
+@using DotNetAppSqlDb.Models
+@{
+    ViewBag.Title = "ConfirmaPagamento";
+    Layout = "~/Views/Shared/EscolaView.cshtml";
+    DotNetAppSqlDb.Models.Escola vEscola = (DotNetAppSqlDb.Models.Escola)HttpContext.Current.Session["EscolaLogada"];
+    Passeio passeioModel = (Passeio)ViewData["PasseioModel"];
+
+}
+
+<h2>ConfirmaPagamento</h2>
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">Pagamento Efetuado</h1>
+    <p class="lead">
+        Seu Pagamento foi efetuado e temporariamente está em análise, aguarde nosso contato para
+        confirmação
+    </p>
+</div>
+
+<form name="meu_form" div align="center">
+    @Html.ActionLink("Voltar", "MainPage",new { id = vEscola.IdEscola }, new { @class = "btn btn-success" })
+</form>

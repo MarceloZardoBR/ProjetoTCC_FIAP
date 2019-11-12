@@ -1,0 +1,34 @@
+﻿@model DotNetAppSqlDb.Models.Autorizacao
+@{
+    ViewBag.Title = "AutorizacaoPasseio";
+    Layout = "~/Views/Shared/AlunoView.cshtml";
+}
+
+<html>
+<head>
+    <link href="@Url.Content("~/Content/css/area-aluno.css")" rel="stylesheet" />
+</head>
+
+<body>
+    <p style="text-align:center">@TempData["Mensagem"]</p>
+    @using (Html.BeginForm("EditarAutorizacao", "Aluno", FormMethod.Post))
+    {
+        <div class="form-group">
+            <p class="estilo-texto2">Ao enviar uma nova autorização, ela tera que passar por aprovação novamente!</p>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-10">URL da Imagem ou PDF</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.URL, new { htmlAttributes = new { @class = "form-control w-50" } })
+                @Html.HiddenFor(model => model.IdAluno)
+                @Html.HiddenFor(model => model.IdAutorizacao)
+            </div>
+        </div>
+        <div class="col-md-10">
+            <input type="submit" value="Salvar" class="btn btn-primary" />
+            @Html.ActionLink("Cancelar","AutorizacaoAluno","Aluno", Model, new { @class = "btn btn-danger" })
+        </div>
+    }
+</body>
+</html>
+

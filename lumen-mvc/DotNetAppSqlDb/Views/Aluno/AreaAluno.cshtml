@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AlunoView.cshtml";
+    DotNetAppSqlDb.Models.Aluno vAluno = (DotNetAppSqlDb.Models.Aluno)HttpContext.Current.Session["AlunoLogado"];
+}
+
+<html>
+<head>
+    <link href="@Url.Content("~/Content/css/area-aluno.css")" rel="stylesheet" />
+</head>
+<body>
+    
+    <p style="text-align:center">@TempData["Mensagem"]</p>
+    <br />
+    <h2 class="estilo-texto1">Seja Bem Vindo @vAluno.NomeCompleto</h2>
+
+</body>
+</html>

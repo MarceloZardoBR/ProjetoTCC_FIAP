@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "CadastroEscolha";
+    Layout = "~/Views/Shared/LoginView.cshtml";
+}
+
+<link href="@Url.Content("~/Content/css/login-aluno.css")" rel="stylesheet" id="bootstrap-css">
+<script src="@Url.Content("~/Content/vendor/bootstrap/js/bootstrap.min.js")"></script>
+<script src="@Url.Content("~/Content/vendor/jquery/jquery.min.js")"></script>
+<link href="@Url.Content("~/Content/css/registra-aluno.css")" />
+
+<div class="login-register-menu">
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+            <!-- Icon -->
+            <div class="fadeIn first">
+                <h2>Você é um(a):</h2>
+            </div>
+            @*@if (!ViewData.ModelState.IsValid)
+                {
+                @Html.ValidationSummary()
+                }
+                @TempData["Mensagem"]*@
+            <!-- Login Form -->
+            @using (Html.BeginForm("CadastroEscolha", "Home", FormMethod.Post))
+            {
+                <div class="btn-group-lg">
+
+                    <a class="btn btn-primary" href="/Home/CadastroEmpresa" role="button">Empresa</a>
+                    <a class="btn btn-primary" href="/Home/CadastroEscola" role="button">Escola</a>
+                    <a class="btn btn-primary" href="/Aluno/Registra" role="button">Aluno</a>
+                </div>
+            }
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+                <a class="underlineHover" href="/Home/Index">Voltar</a>
+            </div>
+        </div>
+    </div>
+</div>

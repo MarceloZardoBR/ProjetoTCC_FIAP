@@ -1,0 +1,51 @@
+﻿@model DotNetAppSqlDb.Models.FrasesModel
+
+@using System.Web.Mvc.Html;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/VocacionalTesteView.cshtml";
+
+}
+<html>
+<head>
+    <link href="@Url.Content("~/Content/css/estilo-checkbox.css")" rel="stylesheet">
+</head>
+<body>
+    <!-- Default unchecked -->
+    <div class="container">
+        <div class="align-content-center w-100 my-5 text-center">
+            <h1> Teste Vocacional</h1>
+            <p>
+                Selecione as frases com a qual voce mais se identifica. Você pode selecionar mais de uma.
+            </p>
+        </div>
+        <div class="checkbox mx-5 px-5">
+            @using (Html.BeginForm("Enviar", "Vocacional", FormMethod.Post))
+            {
+                <div>
+                    @for (int i = 0; i < Model.ListaFrases.Count; i++)
+                    {
+                        <div class="form-row">
+                            <div class="form-group">      
+                                <div class="custom-control custom-checkbox">
+                                    @Html.CheckBoxFor(p => p.ListaFrases[i].Selecionado, new { @class = "custom-control-input", @id = Model.ListaFrases[i].Pergunta })
+                                    <label class="custom-control-label" for="@Model.ListaFrases[i].Pergunta">@Model.ListaFrases[i].Pergunta</label>
+                                    @Html.HiddenFor(p => p.ListaFrases[i].IdPergunta)
+                                    @Html.HiddenFor(p => p.ListaFrases[i].Pergunta)
+                                    @Html.HiddenFor(p => p.ListaFrases[i].IdCategoria)
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <br />
+                <input type="submit" value="Inserir" class="btn btn-primary" />
+            }
+
+        </div>
+    </div>
+</body>
+</html>
+
+

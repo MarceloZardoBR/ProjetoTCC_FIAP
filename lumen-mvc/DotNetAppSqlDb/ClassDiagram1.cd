@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DotNetAppSqlDb.Business.AreaBusiness">
+    <Position X="3.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business\AreaBusiness.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.Business.AutorizacaoBusiness">
+    <Position X="9.5" Y="2.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business\AutorizacaoBusiness.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.Business.CriptografiaSenha">
+    <Position X="3" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Business\CriptografiaSenha.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.Business.EmpresaBusiness">
+    <Position X="4.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business\EmpresaBusiness.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.Business.EnderecoBusiness">
+    <Position X="7.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business\EnderecoBusiness.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.Business.PagamentoBusiness">
+    <Position X="0.5" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business\PagamentoBusiness.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.Business.PasseioAlunoBusiness">
+    <Position X="3" Y="8" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAACAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business\PasseioAlunoBusiness.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.Business.PasseioBusiness">
+    <Position X="7.5" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AgBAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business\PasseioBusiness.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.Business.PasseioEscolaBusiness">
+    <Position X="0.5" Y="9" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAIAAQAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Business\PasseioEscolaBusiness.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.Business.RespostasBusiness">
+    <Position X="9" Y="8.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business\RespostasBusiness.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.Business.TesteBusiness">
+    <Position X="7" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAACAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Business\TesteBusiness.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.DAO.AlunoDAO">
+    <Position X="1.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAQAAAAAAAAAIAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAO\AlunoDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.DAO.AreaDAO">
+    <Position X="3.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAO\AreaDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.DAO.AutorizacaoDAO">
+    <Position X="0.75" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAQAAAAAgAAQAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>DAO\AutorizacaoDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.DAO.CategoriaPasseioDAO">
+    <Position X="5.5" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAO\CategoriaPasseioDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.DAO.CursoDAO">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>DAO\CursoDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.DAO.DatasDAO">
+    <Position X="9.75" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAO\DatasDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.DAO.EmpresaDAO">
+    <Position X="5.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAEAAAAAQAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>DAO\EmpresaDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.DAO.EnderecoDAO">
+    <Position X="9.5" Y="6.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAO\EnderecoDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.DAO.EscolaDAO">
+    <Position X="0.5" Y="5.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAQIAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>DAO\EscolaDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.DAO.FrasesDAO">
+    <Position X="6.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAO\FrasesDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.DAO.PagamentoDAO">
+    <Position X="3" Y="6.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAQAAAAAAAAAAAAAAQIA=</HashCode>
+      <FileName>DAO\PagamentoDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.DAO.PasseioAlunoDAO">
+    <Position X="7.25" Y="6.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAO\PasseioAlunoDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.DAO.PasseioDAO">
+    <Position X="5" Y="9.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAkAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAQAIA=</HashCode>
+      <FileName>DAO\PasseioDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.DAO.PasseioEscolaDAO">
+    <Position X="3" Y="9.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAO\PasseioEscolaDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.DAO.PlanoDAO">
+    <Position X="8.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>DAO\PlanoDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.DAO.ResultadoDAO">
+    <Position X="5" Y="8.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAO\ResultadoDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.DAO.TesteDAO">
+    <Position X="7" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>DAO\TesteDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.Models.Aluno">
+    <Position X="21.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgCAABAIAAAAAAAJAACAAAAAAACAIAIQQAAA=</HashCode>
+      <FileName>Models\Aluno.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.Models.Area">
+    <Position X="23.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Models\Area.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.Models.Autorizacao">
+    <Position X="19.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAACAAAAAAAAAIAAABAAA=</HashCode>
+      <FileName>Models\Autorizacao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.Models.CategoriaModel">
+    <Position X="25.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\CategoriaModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.Models.CategoriaPasseio">
+    <Position X="25.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\CategoriaPasseio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.Models.CursoModel">
+    <Position X="21.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAQAAAAAAAAACAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Models\CursoModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.Models.DataDisponivel">
+    <Position X="21.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAgAAAAAAAAAAAAAAAgAAAAAAAAABAAAEAAAQAAAAA=</HashCode>
+      <FileName>Models\DataDisponivel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.Models.Empresa">
+    <Position X="24.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAhCAAABAAAAAAAAgAAKAAAAACAEAgAQAgEAA=</HashCode>
+      <FileName>Models\Empresa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.Models.Endereco">
+    <Position X="16.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAACIAAAAAAAAAAIAAAAAAAAAAAAABAAg=</HashCode>
+      <FileName>Models\Endereco.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.Models.Escola">
+    <Position X="23.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgCAAABAAAAAAAAAAAKAAAAAAAAAgAgUBEAA=</HashCode>
+      <FileName>Models\Escola.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.Models.FrasesModel">
+    <Position X="18" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIBAQAAAAAAAAAQAAAAAQAAEAAAAA=</HashCode>
+      <FileName>Models\FrasesModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.Models.Pagamento">
+    <Position X="19.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAwAAAIAAAAAAAAgAAAAAAAAAAAQBAAQAAAA=</HashCode>
+      <FileName>Models\Pagamento.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.Models.Passeio">
+    <Position X="18" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAABAACgQiAAAEAAAAABgAAEAgAAUBEAA=</HashCode>
+      <FileName>Models\Passeio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.Models.PasseioAluno">
+    <Position X="23.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAABAAAAAAACAAAQAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Models\PasseioAluno.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.Models.PasseioEscola">
+    <Position X="19.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEBgAAAAAAAAACAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Models\PasseioEscola.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.Models.Plano">
+    <Position X="18" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAABAAAAAAAAAAAEAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Plano.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.Models.ResultadoModel">
+    <Position X="21.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAgF4AAAAAAAAAAAAAAAAIAAABAAA=</HashCode>
+      <FileName>Models\ResultadoModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.Models.TestesModel">
+    <Position X="19.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAACABAAAAIAEABBAA=</HashCode>
+      <FileName>Models\TestesModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DotNetAppSqlDb.Models.Usuario">
+    <Position X="23.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAQAAiAAAAAAAAAAAAAAACAAAAAAAEAAAAQAAAA=</HashCode>
+      <FileName>Models\Usuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
