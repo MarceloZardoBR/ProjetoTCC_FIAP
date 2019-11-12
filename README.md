@@ -5,7 +5,7 @@ Conclusion Project of Information System Bachelor at FIAP
 
 It is a platform developed to approach indecisive students with your future course, through excursion to the companies acording with your style that are defined by a vocational test.
 
-## Especificações
+## Specs
 Follow Below the Technology used to develop the application
 
 - ASP.NET MVC
